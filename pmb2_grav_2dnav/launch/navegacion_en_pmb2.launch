@@ -1,0 +1,15 @@
+<launch>
+    <!-- Map server is launched in launchs above -->
+  <!--<arg name="map_file" default="/home/pal/Documentos/mapas_pmb2_lab/mapa_pasillo_lab467/map.yaml"/> 
+<arg name="map_file" default="/home/pal/Documentos/mapas_pmb2_lab/mapa_402_20-06/map.yaml"/>
+<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />-->
+  <arg name="scan_topic" default="/scan"/>
+  <arg name="odom_topic" default="/mobile_base_controller/odom"/> 
+    <!-- Executing the nodes in the robot PMB2... -->
+    <include file="$(find pmb2_grav_2dnav)/launch/amcl_diff.launch" />
+    <include file="$(find pmb2_grav_2dnav)/launch/move_base_launch.launch" />
+	<!-- En el caso de no querer mapa, descomentar lo siguiente
+	<arg name="no_static_map" value="true"/>-->
+ 
+
+</launch>

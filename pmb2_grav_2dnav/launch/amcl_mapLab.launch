@@ -1,0 +1,19 @@
+<launch>
+  <!-- Run Map server -->
+  <arg name="map_file" default="/home/pal/Documentos/mapas_pmb2_lab/mapa_pasillo_lab467/map.yaml"/>
+  <arg name="scan_topic" default="/scan"/>
+  <arg name="odom_topic" default="/mobile_base_controller/odom"/> 
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+
+  <!-- Run AMCL -->
+
+  <include file="$(find amcl)/examples/amcl_diff.launch">
+    
+   <!-- <arg name="initial_pose_x" value="-3.39"/>
+    <arg name="initial_pose_y" value="-5.45"/>
+    <arg name="initial_pose_a" value="1.543"/>
+   -->
+    </include>
+
+</launch>

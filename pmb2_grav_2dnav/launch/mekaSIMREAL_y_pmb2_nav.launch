@@ -1,0 +1,25 @@
+<launch>
+
+<!-- robot urdf model
+<param name="robot_description" command="cat $(find meka_description)/robots/uja_acople.urdf.xacro" /> 
+
+ send pr2_l_arm.xml to param server 
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find meka_description)/robots/uja_fixed_hands.urdf.xacro'" /> -->
+
+<!-- spawn general model for the youbot COMENTADO PORQUE HA VARIADO EL .URDF EN EL PC_MEKA
+  <arg name="meka_model" default="$(find meka_description)/robots/uja_acople.urdf.xacro" />
+  <param name="meka_description" command="$(find xacro)/xacro.py '$(arg meka_model)'" /> -->
+
+ <node pkg="tf" type="static_transform_publisher" name="meka_PMB2_joint_broadcaster" args="0 0 0.2 0 0 0 base_link base_meka_link 100" />
+
+<node pkg="rviz" type="rviz" respawn="false" output="screen" name="rviz"
+   	 args="-d '$(find pmb2_grav_2dnav)/rviz/mekaYPMB2.rviz'" required="true" />
+
+
+<node pkg="rqt_publisher" type="rqt_publisher" name="rqt_publisher" />
+
+<!-- Incluimos la navegación en PMB2 suponiendo que ya está lanzado los sensores-->
+    <include file="$(find pmb2_grav_2dnav)/launch/navegacion_en_pmb2.launch" />
+    	
+
+</launch>

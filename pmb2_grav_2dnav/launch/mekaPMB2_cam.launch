@@ -1,0 +1,29 @@
+<launch>
+
+<!-- spawn general model for meka&Kinect -->
+  <arg name="meka_model" default="$(find meka_description)/robots/uja_kinect.urdf.xacro" />
+  <param name="meka_description" command="$(find xacro)/xacro.py '$(arg meka_model)'" />
+
+
+ <node pkg="tf" type="static_transform_publisher" name="meka_PMB2_joint_broadcaster" args="0 0 0.2 0 0 0 base_link base_meka_link 100" />
+
+<node pkg="rviz" type="rviz" respawn="false" output="screen" name="rviz"
+   	 args="-d '$(find pmb2_grav_2dnav)/rviz/mekaYPMB2.rviz'" required="true" />
+
+
+<node pkg="rqt_publisher" type="rqt_publisher" name="rqt_publisher" />
+
+
+<include file="$(find platform_bringup)/robots.machines" />
+
+<!-- Incluimos la navegación en PMB2 suponiendo que ya está lanzado los sensores-->
+    <include file="$(find pmb2_grav_2dnav)/launch/navegacion_en_pmb2.launch" />
+    <include file="$(find nav_to_people)/launch/camera_sound_pmb2.launch" />
+    <include file="$(find meka_description)/launch/meka_remote.launch" />
+
+
+ <!--Luego se deben lanzar las aplicaciones finales, como las de nav_to_people o demo_smach ..meka_pc
+
+<include file="$(find meka_description)/launch/meka_remote.launch" />
+-->
+</launch>

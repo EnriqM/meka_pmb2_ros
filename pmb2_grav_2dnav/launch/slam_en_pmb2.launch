@@ -1,0 +1,18 @@
+<launch>
+  
+  <!-- Executing the nodes in the robot PMB2... -->
+    
+
+    
+  	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+   	 	
+    		<rosparam file="$(find pmb2_grav_2dnav)/config/mapping/gmapping.yaml" command="load"/>
+ 	 </node>
+
+  <!-- Según he leído, gmapping proporciona el tf entre el mapa y la odometría,
+	por lo que no haría falta lanzar el nodo /amcl.
+    <include file="$(find amcl)/examples/amcl_diff.launch" /> 
+    <include file="$(find pmb2_grav_2dnav)/launch/move_base_launch.launch" />-->
+
+
+</launch>

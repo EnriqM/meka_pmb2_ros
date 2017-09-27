@@ -1,0 +1,20 @@
+ <launch>
+
+<arg name="map_file" default="/home/pal/Documentos/mapas_pmb2_lab/mapas_lab467_2-3-17/map.yaml"/>
+
+  
+    
+  
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  
+ <!--
+ <node pkg="rviz" type="rviz" respawn="false" output="screen" name="rviz"
+   	 args="-d '$(find meka_description)/m1.rviz'" required="true" />
+ <arg name="scan_topic" default="SwissRanger/scan"/>
+<remap from="SwissRanger/scan" to="scan"/>
+ -->
+
+    <include file="$(find amcl)/examples/amcl_diff.launch" />
+ 
+
+</launch>
