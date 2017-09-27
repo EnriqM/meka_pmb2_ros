@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
+
+  <property name="M_PI" value="3.1415926535897931" />
+ 
+
+  <macro name="m3_neck" params="side parent reflect *origin">
+    
+   
+    
+     <joint name="head_j1" type="revolute">
+      <axis xyz="0 0 1"/>
+     <limit effort="100" velocity="${75*M_PI/180}" lower="${-56.0*M_PI/180}" upper="${56.0*M_PI/180}" />    
+      <insert_block name="origin" /> <!-- transform from parent link to this joint frame -->
+      <parent link="${parent}"/>
+      <child link="neck_pan"/>
+    </joint>
+    
+ 
+    
+    <link name="neck_pan">
+      <inertial>
+        <mass value="0.940" />
+	<origin xyz="0.000061 0.003310 0.028798"/>
+	<inertia ixx="0.001395"
+	iyy="0.001345"
+	izz="0.000392"
+	ixy="-0.000000"
+	ixz="-0.000000"
+	iyz="-0.000085" />
+      </inertial>
+
+      <visual>
+	      <material name="GreyA" />
+	      <!--<origin xyz="0 0 0.0" rpy="0 0 0 " />-->
+	      <origin xyz="0 0 0" rpy="0 0 0 " />
+	      <geometry name="neck_tilt_geom">		
+		<!--<box size="0.01 0.01 0.01" />-->
+		<!--<mesh filename="package://${MESH}/S2R1/S2R1_SH1_neckTilt.dae" />-->
+		<mesh filename="package://${MESH}/S3R1/neck.dae" />
+	      </geometry>  
+      </visual>
+
+      <collision>
+	      <origin xyz="0 0 0" rpy="0.0 0.0 0.0 " />
+	      <geometry name="neck_tilt_geom_collison">
+		      <mesh filename="package://${MESH_COLL}/S2R1/S2R1_SH1_neckTilt.stl" />
+	      </geometry>
+      </collision>
+    </link>
+
+    
+
+
+    
+    <joint name="head_j0" type="revolute">
+      <axis xyz="0 -1 0" />
+      <origin xyz="0 0 0.152287" rpy="0 0 0" />
+      <parent link="neck_pan"/>
+      <child link="shell"/>
+      <limit effort="100" velocity="${20.0*M_PI/180}" lower="${-18.0*M_PI/180}" upper="${1.0*M_PI/180}" />
+    </joint>
+    
+    <link name="shell">
+      <inertial>
+        <mass value="0.409" />
+	<origin xyz="0.0 0.0 0.0"/>
+	<inertia ixx="0.0"
+	iyy="0.0"
+	izz="0.0"
+	ixy="0.0"
+	ixz="0.0"
+	iyz="0.0" />
+      </inertial>
+
+      <visual>
+	      <material name="GreyB" />
+	      <origin xyz="0 0 0" rpy="0 0 0 " />
+	      <geometry name="shell_geom">
+		      <mesh filename="package://${MESH}/S3R1/S3.dae" />
+	      </geometry>  
+      </visual>
+      
+      <collision>
+	      <origin xyz="0 0 0" rpy="0.0 0.0 0.0 " />
+	      <geometry name="S3_collision">
+		      <box size="0.01 0.01 0.01" />
+	      </geometry>
+      </collision>
+    </link>    
+    
+    <joint name="head_j2" type="revolute">
+      <axis xyz="0 -1 0" /> 
+      <origin xyz="0.07975 0 0.123536" rpy="0 0 0" />
+      <parent link="shell"/>
+      <child link="BB3"/>
+      <limit effort="100" velocity="${20.0*M_PI/180}" lower="${-18.0*M_PI/180}" upper="${1.0*M_PI/180}" />
+    </joint>
+    
+    <link name="BB3">
+      <inertial>
+        <mass value="0.409" />
+	<origin xyz="0.0 0.0 0.0"/>
+	<inertia ixx="0.0"
+	iyy="0.0"
+	izz="0.0"
+	ixy="0.0"
+	ixz="0.0"
+	iyz="0.0" />
+      </inertial>
+
+      <visual>
+	      <material name="GreyB" />
+	      <origin xyz="0 0 0" rpy="0 0 0 " />
+	      <geometry name="shell_geom">
+		      <mesh filename="package://${MESH}/S3R1/BB3.dae" />
+	      </geometry>  
+      </visual>
+      
+      <collision>
+	      <origin xyz="0 0 0" rpy="0.0 0.0 0.0 " />
+	      <geometry name="S3_collision">
+		      <box size="0.01 0.01 0.01" />
+	      </geometry>
+      </collision>
+    </link>    
+    
+</macro>
+
+
+  <macro name="m3_head" params="side parent reflect *origin">
+    <m3_neck side="${side}" reflect="${reflect}" parent="${parent}">
+      <insert_block name="origin" />
+    </m3_neck>
+  </macro>
+
+
+</robot>
