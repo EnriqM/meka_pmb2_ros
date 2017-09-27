@@ -1,0 +1,36 @@
+<launch>
+
+<!-- robot urdf model
+<param name="robot_description" command="cat $(find meka_description)/robots/uja_acople.urdf.xacro" /> 
+
+ send pr2_l_arm.xml to param server 
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find meka_description)/robots/uja_fixed_hands.urdf.xacro'" /> 
+<env name="ROS_MASTER_URI" value="http://pmb2-5c:11311" />
+    <env name="ROS_IP" value="10.68.0.130" />
+    <env name="ROS_PACKAGE_PATH" value="~/asgarcia/wp_ros/src:$ROS_PACKAGE_PATH" />
+
+<arg name="meka_model" default="$(find meka_description)/robots/uja_kinect.urdf.xacro" />
+  <param name="meka_description" command="$(find xacro)/xacro.py '$(arg meka_model)'" />-->
+
+
+
+
+    
+    <!-- robot state publisher node -->
+    <node pkg="robot_state_publisher" type="state_publisher" name="meka_state_publisher" machine="meka_pc">
+	    <remap from="robot_description" to="meka_description" />
+	    <remap from="joint_states" to="humanoid_state" />
+    </node>
+<node pkg="rospy_tutorials" type="talker" name="talker_meka" machine="meka_pc"/>
+
+ <!--
+    <node pkg="controlMeka" type="controlMeka" output="screen" name="controlMeka" machine="meka_pc">
+   	     <remap from="robot_description" to="meka_description" />
+</node>
+
+
+
+ <node pkg="tf" type="static_transform_publisher" name="meka_PMB2_joint_broadcaster" args="0 0 0.2 0 0 0 base_link meka/base_link 100" />-->
+    
+
+</launch>
