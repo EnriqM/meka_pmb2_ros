@@ -1,0 +1,42 @@
+<launch>
+    <!-- Turtlesim Node
+    <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+    <node pkg="turtlesim" type="turtle_teleop_key" name="teleop" output="screen"/>-->
+
+    <node name="arm_right_follower" pkg="nav_to_people" type="meka_arm_server_simple.py" output="screen" >
+      <param name="movframe" type="string" value="left_hand_1" />
+      <param name="arm" type="string" value="right" />
+      <param name="x_offset" value="0.09" />
+      <param name="y_offset" value="0.07" />
+    </node>
+
+<!--
+<node name="arm_left_follower" pkg="nav_to_people" type="meka_arm_simple.py" output="screen" >
+      <param name="movframe" type="string" value="right_hand_1" />
+      <param name="arm" type="string" value="left" />
+      <param name="x_offset" value="0.09" />
+      <param name="y_offset" value="0.07" />
+    </node>
+
+ Descomentar en caso de utilizar cámaras reales
+ <node pkg="tf" type="static_transform_publisher" name="robot_kinect" args="0 0 0.2 0 0 0 robot_link camera_link 100" />
+<node pkg="tf" type="static_transform_publisher" name="otro" args="0 0 0 0 0 0 camera_link openni_depth_frame 50" /> -->
+
+
+
+<!--
+    <node name="human_2_tf_speed" pkg="nav_to_people" type="orientation_tf.py" output="screen" >
+      <param name="fixframe" type="string" value="gyroscope" />
+      <param name="movframe" type="string" value="person_tf_1" />
+    </node>
+
+<node name="human1_tf_speed" pkg="nav_to_people" type="velocity_tf_module.py" output="screen" >
+      <param name="fixframe" type="string" value="gyroscope" />
+      <param name="movframe" type="string" value="person_tf_0" />
+    </node>-->
+
+    <!--<node name="turtle2_tf_broadcaster" pkg="learning_tf" type="turtle_tf_broadcaster.py" respawn="false" output="screen" >
+      <param name="turtle" type="string" value="turtle2" /> 
+    </node> -->
+
+  </launch>

@@ -1,0 +1,22 @@
+<launch>
+
+<arg name="common_fixed_frame" default="gyroscope"/>
+
+    <!-- Launch multiple humans' speed and TF -->
+
+<node name="human_1_tf_speed" pkg="nav_to_people" type="velocity_tf_PLUS_orientation.py" output="screen" >
+      <param name="fixframe" type="string" value="$(arg common_fixed_frame)" />
+      <param name="movframe" type="string" value="person_tf_0" />
+    </node>
+
+
+<node name="human_2_tf_speed" pkg="nav_to_people" type="velocity_tf_PLUS_orientation.py" output="screen" >
+      <param name="fixframe" type="string" value="$(arg common_fixed_frame)" />
+      <param name="movframe" type="string" value="person_tf_1" />
+    </node>
+
+<node name="human_3_tf_speed" pkg="nav_to_people" type="velocity_tf_PLUS_orientation.py" output="screen" >
+      <param name="fixframe" type="string" value="$(arg common_fixed_frame)" />
+      <param name="movframe" type="string" value="person_tf_2" />
+    </node>
+</launch>

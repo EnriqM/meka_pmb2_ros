@@ -1,0 +1,12 @@
+<launch>
+  
+  <!-- Executing the nodes in the robot PMB2... (robot.machines needed) -->
+
+     <node name="speaker_pmb2" pkg="sound_play" type="soundplay_node.py" machine="pmb2-5" />
+
+    <include file="$(find openni_launch)/launch/openni.launch" />
+     <!--   <node name="openni_tracker_kinect1" pkg="openni_tracker" type="openni_tracker" output="screen" machine="pmb2-5" />-->
+      
+ 
+
+</launch>

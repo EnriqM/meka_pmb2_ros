@@ -1,0 +1,14 @@
+<launch>
+    <!-- Lanzamiento del envio de metas al Meka para interactuar con humanos-->
+
+    <node name="server_arm_follower" pkg="nav_to_people" type="meka_arm_server_duo.py" output="screen" >
+      <param name="x_offset" value="0.09" />
+      <param name="y_offset" value="0.07" />
+    </node>
+
+<!-- Descomentar en caso de fallo o uso de URDF antiguo
+ <node pkg="tf" type="static_transform_publisher" name="robot_kinect" args="0 0 0.2 0 0 0 robot_link camera_link 100" />
+<node pkg="tf" type="static_transform_publisher" name="otro" args="0 0 0 0 0 0 camera_link openni_depth_frame 50" /> -->
+
+
+</launch>

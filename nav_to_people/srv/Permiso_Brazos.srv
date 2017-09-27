@@ -1,0 +1,7 @@
+bool interruptor
+string modo #De momento es: mimica o dar_mano
+string brazo #left or right = izquierdo o derecho
+string frame_objetivo #el frame que hace mimica o da la mano, con offsets predefinidos. NO LLEVA el /
+---
+bool success
+string message
