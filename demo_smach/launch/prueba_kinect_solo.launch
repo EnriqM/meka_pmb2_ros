@@ -1,0 +1,22 @@
+<launch>
+<!-- Run Map server -->
+  <!--<arg name="map_file" default="/home/pal/Documentos/mapas_pmb2_lab/mapa_pasillo_lab467/map.yaml"/> 
+
+<arg name="map_file" default="/home/pal/Documentos/mapas_pmb2_lab/mapa_402_20-06/map.yaml"/>
+<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+<node pkg="rviz" type="rviz" respawn="false" output="screen" name="rviz"
+   	 args="-d '$(find pmb2_grav_2dnav)/rviz/mekaYPMB2.rviz'" required="true" />-->
+
+
+<!-- Se etiquetan las maquinas en las que se lanza-->
+<include file="$(find platform_bringup)/robots.machines" />
+
+
+<!-- Incluimos la navegación en PMB2 suponiendo que ya está lanzado los sensores
+
+<include file="$(find platform_bringup)/launch/various_bringup.launch" />
+-->
+    <include file="$(find nav_to_people)/launch/camera_sound_pmb2.launch" />
+   
+</launch>
