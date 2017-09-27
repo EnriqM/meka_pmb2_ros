@@ -1,0 +1,16 @@
+<launch>
+  <!-- In case of wiFi 
+  <arg name="ros_ip_robotPMB2" default="10.68.0.1"/> -->
+  <!-- In case of Ethernet - LAB.402
+  <arg name="ros_ip_robotPMB2" default="192.168.71.167"/>-->
+
+  <!-- Executing the nodes in the robot PMB2... -->
+    <include file="$(find platform_bringup)/robots.machines" />
+     <node name="speaker_pmb2" pkg="sound_play" type="soundplay_node.py" machine="pmb2-5" />
+
+    <include file="$(find openni_launch)/launch/openni.launch" />
+<!--       <node name="openni_tracker_kinect1" pkg="openni_tracker2" type="openni_tracker2" output="screen" machine="pmb2-5" />-->
+      
+ 
+
+</launch>
