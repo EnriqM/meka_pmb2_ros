@@ -1,0 +1,13 @@
+<launch>
+
+
+  <!-- Cambia el booleano a False para leer. A True para guardar una calibración de la TOF.-->
+  <arg name="bool_escritura" default="True"/>
+
+   
+<node name="tof_calibration_node" pkg="imu_camera" type="tof_calibracion_map.py" output="screen" >
+      <param name="modo_escritura" type="bool" value="$(arg bool_escritura)" />
+    </node>
+
+
+</launch>
