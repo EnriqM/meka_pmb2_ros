@@ -1,0 +1,50 @@
+<package>
+
+  <name>meka_moveit_generated</name>
+  <version>0.3.0</version>
+  <description>
+     An automatically generated package with all the configuration and launch files for using the meka with the MoveIt! Motion Planning Framework
+  </description>
+<!-- One maintainer tag required, multiple allowed, one person per tag --> 
+  <!-- Example:  -->
+  <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
+  <maintainer email="emov0001@red.ujaen.es">Enriq</maintainer>
+
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>GPLv3</license>
+
+
+  <!-- Url tags are optional, but multiple are allowed, one per tag -->
+  <!-- Optional attribute type can be: website, bugtracker, or repository -->
+  <!-- Example: -->
+  <!-- <url type="website">http://wiki.ros.org/pmb2_grav_2dnav</url> -->
+
+
+  <!-- Author tags are optional, multiple are allowed, one per tag -->
+  <!-- Authors do not have to be maintainers, but could be -->
+  <!-- Example: -->
+   <author email="emov0001@red.ujaen.es">Enriq</author> 
+
+
+
+  <url type="website">http://moveit.ros.org/</url>
+  <url type="bugtracker">https://github.com/ros-planning/moveit/issues</url>
+  <url type="repository">https://github.com/ros-planning/moveit</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>moveit_ros_move_group</run_depend>
+  <run_depend>moveit_kinematics</run_depend>
+  <run_depend>moveit_planners_ompl</run_depend>
+  <run_depend>moveit_ros_visualization</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>xacro</run_depend>
+  <build_depend>meka_description</build_depend>
+  <run_depend>meka_description</run_depend>
+
+
+</package>

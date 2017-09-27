@@ -1,0 +1,124 @@
+# joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
+# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
+# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+joint_limits:
+  left_arm_j0:
+    has_velocity_limits: true
+    max_velocity: 0.5235987755980001
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_arm_j1:
+    has_velocity_limits: true
+    max_velocity: 0.5235987755980001
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_arm_j2:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_arm_j3:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_arm_j4:
+    has_velocity_limits: true
+    max_velocity: 2.61799387799
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_arm_j5:
+    has_velocity_limits: true
+    max_velocity: 0.698131700798
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_arm_j6:
+    has_velocity_limits: true
+    max_velocity: 0.698131700798
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_hand_j0:
+    has_velocity_limits: true
+    max_velocity: 0.349065850399
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_hand_j1:
+    has_velocity_limits: true
+    max_velocity: 1.308996939
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_hand_j2:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_hand_j3:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  left_hand_j4:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_arm_j0:
+    has_velocity_limits: true
+    max_velocity: 0.5235987755980001
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_arm_j1:
+    has_velocity_limits: true
+    max_velocity: 0.5235987755980001
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_arm_j2:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_arm_j3:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_arm_j4:
+    has_velocity_limits: true
+    max_velocity: 2.61799387799
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_arm_j5:
+    has_velocity_limits: true
+    max_velocity: 0.698131700798
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_arm_j6:
+    has_velocity_limits: true
+    max_velocity: 0.698131700798
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_hand_j0:
+    has_velocity_limits: true
+    max_velocity: 0.349065850399
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_hand_j1:
+    has_velocity_limits: true
+    max_velocity: 1.308996939
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_hand_j2:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_hand_j3:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
+  right_hand_j4:
+    has_velocity_limits: true
+    max_velocity: 0.872664625997
+    has_acceleration_limits: false
+    max_acceleration: 0
