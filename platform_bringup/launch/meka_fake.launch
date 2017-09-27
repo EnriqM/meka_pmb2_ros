@@ -1,0 +1,12 @@
+<launch>
+
+ <arg name="meka_model" default="$(find meka_description)/robots/uja_kinect.urdf.xacro" />
+  <param name="meka_description" command="$(find xacro)/xacro.py '$(arg meka_model)'" />
+
+<!-- El siguiente nodo sirve para que funcione aun sin ejecutar simulador o robot real (Meka)-->
+<node name="joint_state_publisher_meka" pkg="joint_state_publisher"  type="joint_state_publisher" >
+	<remap from="robot_description" to="meka_description" />
+	<remap from="joint_states" to="humanoid_state" />
+</node>
+
+</launch>

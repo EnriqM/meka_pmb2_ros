@@ -1,0 +1,20 @@
+<launch>
+
+<!-- spawn general model for meka&Kinect -->
+  <arg name="meka_model" default="$(find meka_description)/robots/uja_kinect.urdf.xacro" />
+  <param name="meka_description" command="$(find xacro)/xacro.py '$(arg meka_model)'" />
+
+<node pkg="robot_state_publisher" type="state_publisher" name="meka_state_publisher"  >
+	    <remap from="robot_description" to="meka_description" />
+	    <remap from="joint_states" to="humanoid_state" />
+</node>
+
+<!-- Union entre el PMB2 y el Meka-->
+    <node pkg="tf" type="static_transform_publisher" name="meka_PMB2_joint_broadcaster" args="0 0 0.2 0 0 0 base_link base_meka_link 20" />
+
+
+<!-- LO RELACIONADO CON LA TOF
+<include file="$(find platform_bringup)/launch/tof_nav_smach.launch" />-->
+
+
+</launch>

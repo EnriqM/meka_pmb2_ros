@@ -1,0 +1,10 @@
+<launch>
+
+
+<!-- Se etiquetan las maquinas en las que se lanza-->
+<include file="$(find platform_bringup)/robots.machines" />
+
+
+<include file="$(find platform_bringup)/launch/meka_sim.launch" />
+
+</launch>

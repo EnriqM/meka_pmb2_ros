@@ -1,0 +1,16 @@
+<launch>
+    <!-- Launch final work -->
+    <include file="$(find nav_to_people)/launch/server_meka.launch" />
+    <include file="$(find nav_to_people)/launch/vel_tof.launch" />
+    <include file="$(find imu_camera)/launch/start_tof.launch" >
+	<!-- Debe estar a false si no esta calbirando, para referenciar al mapa-->
+	    <arg name="bool_escritura" value="False"/>
+    </include>
+    <!--<node name="smach_total" pkg="demo_smach" type="final_demo_smach.py " />-->
+
+
+
+
+</launch>
+
+

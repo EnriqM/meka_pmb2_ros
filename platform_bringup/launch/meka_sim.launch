@@ -1,0 +1,13 @@
+<launch>
+
+
+
+ <arg name="meka_model" default="$(find meka_description)/robots/uja_kinect.urdf.xacro" />
+  <param name="meka_description" command="$(find xacro)/xacro.py '$(arg meka_model)'" />
+
+<node pkg="controlMeka" type="simMeka" output="screen" name="simMeka" machine="meka_packs">
+   	     <remap from="robot_description" to="meka_description" />
+</node>
+   
+
+</launch>

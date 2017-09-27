@@ -1,0 +1,16 @@
+<launch>
+<!-- Escoge el robot para lanzar remotamente mediante SSH-->
+<node pkg="rviz" type="rviz" respawn="false" output="screen" name="rviz"
+   	 args="-d '$(find pmb2_grav_2dnav)/rviz/mekaYPMB2.rviz'" required="true" />
+<include file="$(find platform_bringup)/robots.machines" />
+
+
+<!-- Incluimos la navegación en PMB2 suponiendo que ya está lanzado los sensores
+-->
+    <include file="$(find pmb2_grav_2dnav)/launch/slam_en_pmb2.launch" />
+    <include file="$(find pmb2_grav_2dnav)/launch/move_base_launch.launch" />
+  
+    
+
+
+</launch>

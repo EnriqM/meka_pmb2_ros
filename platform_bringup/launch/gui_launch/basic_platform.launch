@@ -1,0 +1,16 @@
+<launch>
+
+
+
+<!-- Se etiquetan las maquinas en las que se lanza-->
+<include file="$(find platform_bringup)/robots.machines" />
+
+
+<include file="$(find platform_bringup)/launch/various_bringup.launch" />
+<!-- Se incluye el lanzamiento de cámara Kinect + altavoz
+-->
+    <include file="$(find nav_to_people)/launch/camera_sound_pmb2.launch" />
+    
+
+
+</launch>
