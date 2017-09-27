@@ -1,6 +1,8 @@
 # common-sensors
 
-A collection of commonly used sensors: urdf files and a few tools
+Made by @JenniferBuehler . Kinect sensor has been modified to be attached to Meka robot.
+
+A collection of commonly used sensors: urdf files and a few tools 
 
 This package includes a variety of sensor models imported from different ROS packages available throughout the web.
 I picked the best / most suitable models and copied them to this package, so they are all available in one location.
