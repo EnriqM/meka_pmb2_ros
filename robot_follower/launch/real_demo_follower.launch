@@ -1,0 +1,14 @@
+<launch>
+    <!-- Demostración de lo que realiza el script que orienta los TF
+
+Lo ultimo se encuentra en platform_bringup/tof_nav_smach.launch, ya configurado para trabajar con parámetros dados por los scripts de la TOF
+
+
+    <include file="$(find turtle_tf)/launch/turtle_tf_demo.launch" />-->
+
+    <node name="server_kinect_tf" pkg="robot_follower" type="server_kinect_follower.py" output="screen" />
+    <node name="smach_follower" pkg="robot_follower" type="smach_kinect.py" output="screen" />
+    
+
+
+</launch>

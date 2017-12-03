@@ -1,0 +1,6 @@
+bool interruptor
+string frame_objetivo #el frame que se sigue, sin la /.
+string frame_referencia #el frame que hace referencia, normalmente robot_link
+---
+bool success
+string message
